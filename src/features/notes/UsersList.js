@@ -1,9 +1,9 @@
-import User from "./User";
+import Note from "./User";
 import { useGetUsersQuery } from "./usersApiSlice";
 
 const UsersList = () => {
   const {
-    data: users,
+    data: notes,
     isLoading,
     isSuccess,
     isError,
@@ -17,7 +17,7 @@ const UsersList = () => {
 
   if (isSuccess) {
     const { ids } = users;
-    const tableContent = ids?.length ? ids.map(userId => <User key={userId} userId={userId} />) : null;
+    const tableContent = ids?.length ? ids.map(userId => <Note key={userId} userId={userId} />) : null;
     content = (
       <table className="table table--users">
         <thead className="table__thead">
